@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Cart from "./components/Cart";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Products from "./components/Products";
+import Orders from "./components/Orders";
+import { createContext, use } from "react";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+export const appContext = createContext();
+function App(props) {
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
+  const [cart, setCart] = useState({});
+  const [orders,setOrders] = useState([])
+  const products = [
+    { id: 1, name: "Product 1", price: 56,desc:"This is a sample description of the product",imgUrl:"https://picsum.photos/id/1/350/350" },
+    { id: 2, name: "Product 2", price: 40,desc:"This is a sample description of the product",imgUrl:"https://picsum.photos/id/2/350/350" },
+    { id: 3, name: "Product 3", price: 35,desc:"This is a sample description of the product",imgUrl:"https://picsum.photos/id/3/350/350" },
+    { id: 4, name: "Product 4", price: 25,desc:"This is a sample description of the product",imgUrl:"https://picsum.photos/id/4/350/350" },
+    { id: 5, name: "Product 5", price: 95,desc:"This is a sample description of the product",imgUrl:"https://picsum.photos/id/5/350/350" },
+    { id: 6, name: "Product 6", price: 85,desc:"This is a sample description of the product",imgUrl:"https://picsum.photos/id/6/350/350" },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <appContext.Provider
+        value={{ users, setUsers, user, setUser, products, cart, setCart,orders,setOrders }}
+      >
+        <Header />
+        <Routes>
+          <Route index element={<Products />} />
+          <Route path="/" element={<Products />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+        <Footer />
+      </appContext.Provider>
+    </BrowserRouter>
   );
 }
-
 export default App;
