@@ -1,4 +1,4 @@
-.App-Products-Row{
+/* .App-Products-Row{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -15,4 +15,64 @@
     padding: 10px;
     font-size: 20px;
     margin: 10px;
-}
+} */
+
+/* Products.css */
+.App-Products-Row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .App-Products-Box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .App-Products-Box:hover {
+    transform: scale(1.02);
+  }
+  
+  .App-Products-Box img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-bottom: 12px;
+  }
+  
+  .App-Products-Box h3 {
+    margin: 8px 0 4px;
+    font-size: 20px;
+    color: var(--font-color);
+  }
+  
+  .App-Products-Box p {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin: 4px 0 12px;
+  }
+  
+  .App-Products-Box h4 {
+    color: var(--primary-color);
+    margin: 0 0 10px;
+  }
+  
+  .App-Products-Box button {
+    margin: 0 6px;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 4px;
+  }
+  

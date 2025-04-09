@@ -1,0 +1,36 @@
+/* Orders.css */
+
+.orders-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 16px;
+  }
+  
+  .order-card {
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--font-color); /* ensure text adapts to theme */
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  
+  .order-card h4 {
+    margin-bottom: 12px;
+    color: var(--primary-color);
+  }
+  
+  .order-details {
+    color: var(--font-color); /* <-- fix grey-on-dark issue */
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .order-details p,
+.order-details span {
+  color: inherit;
+}
+
+  

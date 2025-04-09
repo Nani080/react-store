@@ -1,7 +1,27 @@
-.App-Header-Row{
+/* .App-Header-Row{
     display: flex;
     justify-content: space-between;
     background-color: lightblue;
     padding: 5px;
     font-size: 20px;
-}
+} */
+
+/* Header.css */
+.App-Header-Row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    padding: 12px 24px;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .App-Header-Row h2 {
+    margin: 0;
+  }
+  
+  .App-Header-Row div a {
+    margin: 0 10px;
+  }
+  
